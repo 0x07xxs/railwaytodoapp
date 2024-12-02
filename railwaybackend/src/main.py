@@ -7,7 +7,7 @@ app = FastAPI()
 # Allow CORS (Cross-Origin Resource Sharing)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["frontend-todo-production.up.railway.app"],  # Update this with your frontend URL in production
+    allow_origins=["frontend-production-fc16.up.railway.app"],  # Update this with your frontend URL in production
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
