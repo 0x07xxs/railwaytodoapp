@@ -11,7 +11,7 @@ export default function Home() {
   const [todo, setTodo] = useState<string>('');
   const [todosList, setTodosList] = useState<string[]>([]);
 
-  const BACKEND_URL = "backend-production-9639.up.railway.app";
+  const BACKEND_URL = "https://backend-production-9639.up.railway.app";
 
   useEffect(() => {
     fetchTodos();
