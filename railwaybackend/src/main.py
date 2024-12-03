@@ -11,7 +11,10 @@ ALLOWED_ORIGINS = os.getenv("ALLOWED_ORIGINS", "http://127.0.0.1:3000").split(",
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://frontend-production-fc16.up.railway.app/"],  # Update this with your frontend URL in production
+    allow_origins=[
+        "https://frontend-production-fc16.up.railway.app/",
+        "http://localhost:3000"
+        ],  # Update this with your frontend URL in production
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
