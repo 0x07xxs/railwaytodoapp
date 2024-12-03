@@ -19,7 +19,7 @@ export default function Home() {
 
   const fetchTodos = async () => {
     try {
-      const response = await axios.get<TodoResponse>(`${BACKEND_URL}`);
+      const response = await axios.get<TodoResponse>(`${BACKEND_URL}/`);
       setTodosList(response.data.todos);
     } catch (error) {
       console.error('Error fetching todos:', error);
@@ -29,15 +29,7 @@ export default function Home() {
   const addTodo = async () => {
     if (todo.trim() === '') return;
     try {
-      await axios.post(
-        `${BACKEND_URL}`,
-        { todo }, // Send as JSON object
-        {
-          headers: {
-            'Content-Type': 'application/json',
-          },
-        }
-      );
+      await axios.post(`${BACKEND_URL}/`, { todo }, { headers: { 'Content-Type': 'application/json' } });
       setTodo('');
       fetchTodos();
     } catch (error) {
